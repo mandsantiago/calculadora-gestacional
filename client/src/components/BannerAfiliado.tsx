@@ -1,5 +1,6 @@
 import { Gift } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import bannerDoppler from '../assets/bannerdoppler.webp';
 
 export default function BannerAfiliado() {
   return (
@@ -14,13 +15,19 @@ export default function BannerAfiliado() {
             <Gift className="text-pink-500" size={24} />
           </div>
           
-          <div className="bg-white/80 rounded-xl p-6 border border-pink-200 border-dashed">
-            <p className="text-gray-600 mb-4">
-              Aqui você pode inserir seu banner de afiliado (Amazon, Shopee, etc) com produtos para bebês, gestantes ou cursos de maternidade.
-            </p>
-            <div className="bg-gray-100 w-full h-32 rounded-lg flex items-center justify-center text-gray-400 border-2 border-gray-200 border-dashed">
-              Espaço para Banner 728x90 ou similar
-            </div>
+          <div className="bg-white/80 rounded-xl p-4 border border-pink-200 border-dashed hover:border-pink-400 transition-colors duration-300">
+            <a 
+              href="https://s.shopee.com.br/3qImZ0Le4z" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block hover:opacity-90 transition-opacity duration-300"
+            >
+              <img 
+                src={bannerDoppler} 
+                alt="Doppler Fetal - Visualize os batimentos em tempo real" 
+                className="w-full h-auto max-w-2xl mx-auto rounded-lg shadow-sm"
+              />
+            </a>
           </div>
         </div>
       </CardContent>

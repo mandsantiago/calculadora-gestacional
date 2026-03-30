@@ -14,12 +14,7 @@ export default function Footer() {
             </span>
           </div>
           
-          <div className="flex gap-6 text-sm text-gray-500">
-            <a href="#" className="hover:text-pink-500 transition-colors">Sobre</a>
-            <a href="#" className="hover:text-pink-500 transition-colors">Privacidade</a>
-            <a href="#" className="hover:text-pink-500 transition-colors">Termos de Uso</a>
-            <a href="#" className="hover:text-pink-500 transition-colors">Contato</a>
-          </div>
+
         </div>
         
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">

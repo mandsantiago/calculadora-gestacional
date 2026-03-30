@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, Heart, Baby, Calendar, Stethoscope, Apple } from 'lucide-react';
+import BannerCicatricure from './BannerCicatricure';
 
 const faqs = [
   {
@@ -136,6 +137,9 @@ export default function ConteudoSEO() {
           </div>
         </div>
       </section>
+
+      {/* Banner Cicatricure */}
+      <BannerCicatricure />
 
       {/* Seção 3: Cuidados */}
       <section className="bg-white rounded-3xl p-8 shadow-sm border border-pink-100">
