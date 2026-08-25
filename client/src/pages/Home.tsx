@@ -1,25 +1,28 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import CalculadoraGestacional from "@/components/CalculadoraGestacional";
+import BannerAfiliado from "@/components/BannerAfiliado";
+import ConteudoSEO from "@/components/ConteudoSEO";
+import { useSeo } from "@/hooks/useSeo";
+import { getHomeMeta } from "@/lib/seo-data";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  useSeo(getHomeMeta());
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
-    </div>
+    <>
+      {/* Seção da Calculadora */}
+      <section id="calculadora" className="px-4 mb-12">
+        <CalculadoraGestacional />
+      </section>
+
+      {/* Espaço para Banner */}
+      <section className="max-w-4xl mx-auto px-4 mb-16">
+        <BannerAfiliado />
+      </section>
+
+      {/* Conteúdo SEO (Desenvolvimento, Sintomas, FAQ) */}
+      <section id="desenvolvimento" className="px-4">
+        <ConteudoSEO />
+      </section>
+    </>
   );
 }

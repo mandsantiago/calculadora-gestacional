@@ -1,4 +1,5 @@
 import { Heart, Baby } from 'lucide-react';
+import { Link } from 'wouter';
 
 export default function Footer() {
   return (
@@ -13,8 +14,21 @@ export default function Footer() {
               Calculadora Gestacional
             </span>
           </div>
-          
 
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
+            <Link href="/semanas-de-gravidez" className="hover:text-pink-600 transition-colors">
+              Semana a Semana
+            </Link>
+            <Link href="/sobre" className="hover:text-pink-600 transition-colors">
+              Sobre
+            </Link>
+            <Link href="/politica-de-privacidade" className="hover:text-pink-600 transition-colors">
+              Política de Privacidade
+            </Link>
+            <Link href="/termos-de-uso" className="hover:text-pink-600 transition-colors">
+              Termos de Uso
+            </Link>
+          </nav>
         </div>
         
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">

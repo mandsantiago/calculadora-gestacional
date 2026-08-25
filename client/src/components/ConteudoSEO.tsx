@@ -82,7 +82,7 @@ export default function ConteudoSEO() {
       </section>
 
       {/* Seção 2: Trimestres */}
-      <section>
+      <section id="sintomas">
         <h2 className="text-2xl md:text-3xl font-serif font-bold text-purple-900 mb-6 text-center">
           Os Três Trimestres da Gravidez
         </h2>
@@ -199,17 +199,36 @@ export default function ConteudoSEO() {
       </section>
 
       {/* Seção 4: FAQ */}
-      <section>
+      <section id="faq">
         <h2 className="text-2xl md:text-3xl font-serif font-bold text-purple-900 mb-2 text-center">
           Perguntas Frequentes
         </h2>
         <p className="text-gray-500 mb-8 text-center">Tire suas dúvidas sobre o cálculo das semanas de gravidez</p>
-        
+
         <div className="flex flex-col gap-3">
           {faqs.map((f, i) => (
             <ItemFAQ key={i} pergunta={f.pergunta} resposta={f.resposta} />
           ))}
         </div>
+
+        {/* Dados estruturados FAQPage: gerados a partir do array `faqs` acima, sem duplicar conteúdo */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.pergunta,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: f.resposta,
+                },
+              })),
+            }),
+          }}
+        />
       </section>
     </div>
   );

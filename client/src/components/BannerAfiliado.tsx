@@ -1,6 +1,11 @@
 import { Gift } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import bannerDoppler from '../assets/bannerdoppler.webp';
+
+// Servido a partir de client/public/banners (caminho estável, não um import de
+// asset do Vite) para que o script de prerender (scripts/prerender.ts), que
+// roda fora do bundler, consiga renderizar este componente sem depender da
+// resolução de assets do Vite.
+const bannerDoppler = '/banners/bannerdoppler.webp';
 
 export default function BannerAfiliado() {
   return (
@@ -22,9 +27,13 @@ export default function BannerAfiliado() {
               rel="noopener noreferrer"
               className="block hover:opacity-90 transition-opacity duration-300"
             >
-              <img 
-                src={bannerDoppler} 
-                alt="Doppler Fetal - Visualize os batimentos em tempo real" 
+              <img
+                src={bannerDoppler}
+                alt="Doppler Fetal - Visualize os batimentos em tempo real"
+                width={800}
+                height={800}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto max-w-2xl mx-auto rounded-lg shadow-sm"
               />
             </a>

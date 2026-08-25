@@ -1,6 +1,11 @@
 import { Heart } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import bannerCicatricure from '../assets/bannercicatricure.png';
+
+// Servido a partir de client/public/banners (caminho estável, não um import de
+// asset do Vite) para que o script de prerender (scripts/prerender.ts), que
+// roda fora do bundler, consiga renderizar este componente sem depender da
+// resolução de assets do Vite.
+const bannerCicatricure = '/banners/bannercicatricure.webp';
 
 export default function BannerCicatricure() {
   return (
@@ -22,9 +27,13 @@ export default function BannerCicatricure() {
               rel="noopener noreferrer"
               className="block hover:opacity-90 transition-opacity duration-300"
             >
-              <img 
-                src={bannerCicatricure} 
-                alt="Cicatricure Maternity - Prevenção de Estrias" 
+              <img
+                src={bannerCicatricure}
+                alt="Cicatricure Maternity - Prevenção de Estrias"
+                width={900}
+                height={1613}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto max-w-3xl mx-auto rounded-lg shadow-sm"
               />
             </a>
