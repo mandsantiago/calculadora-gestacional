@@ -24,8 +24,8 @@ export default function PoliticaPrivacidade() {
       <p className="text-gray-600 leading-relaxed mb-4">
         O Calculadora Gestacional é um site de publicação independente. Para qualquer assunto
         relacionado a esta política ou aos seus dados pessoais, o canal de contato é{" "}
-        <a href="mailto:mand.santiago@gmail.com" className="text-pink-600 hover:text-pink-700 underline">
-          mand.santiago@gmail.com
+        <a href="mailto:contato.rituaisdebanho@gmail.com" className="text-pink-600 hover:text-pink-700 underline">
+          contato.rituaisdebanho@gmail.com
         </a>
         .
       </p>
@@ -122,8 +122,8 @@ export default function PoliticaPrivacidade() {
       <p className="text-gray-600 leading-relaxed">
         Dúvidas sobre esta Política de Privacidade ou sobre o tratamento dos seus dados podem ser
         enviadas para{" "}
-        <a href="mailto:mand.santiago@gmail.com" className="text-pink-600 hover:text-pink-700 underline">
-          mand.santiago@gmail.com
+        <a href="mailto:contato.rituaisdebanho@gmail.com" className="text-pink-600 hover:text-pink-700 underline">
+          contato.rituaisdebanho@gmail.com
         </a>
         .
       </p>

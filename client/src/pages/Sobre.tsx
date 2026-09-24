@@ -69,8 +69,8 @@ export default function Sobre() {
       <p className="text-gray-600 leading-relaxed">
         Encontrou alguma informação que parece incorreta, tem uma sugestão ou quer entrar em
         contato por qualquer outro motivo? Escreva para{" "}
-        <a href="mailto:mand.santiago@gmail.com" className="text-pink-600 hover:text-pink-700 underline">
-          mand.santiago@gmail.com
+        <a href="mailto:contato.rituaisdebanho@gmail.com" className="text-pink-600 hover:text-pink-700 underline">
+          contato.rituaisdebanho@gmail.com
         </a>
         . Teremos prazer em ouvir você.
       </p>

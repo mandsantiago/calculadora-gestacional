@@ -103,8 +103,8 @@ export default function TermosDeUso() {
       <h2 className="text-xl font-serif font-semibold text-purple-800 mt-8 mb-3">Contato</h2>
       <p className="text-gray-600 leading-relaxed">
         Dúvidas sobre estes Termos de Uso podem ser enviadas para{" "}
-        <a href="mailto:mand.santiago@gmail.com" className="text-pink-600 hover:text-pink-700 underline">
-          mand.santiago@gmail.com
+        <a href="mailto:contato.rituaisdebanho@gmail.com" className="text-pink-600 hover:text-pink-700 underline">
+          contato.rituaisdebanho@gmail.com
         </a>
         .
       </p>
