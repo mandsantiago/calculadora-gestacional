@@ -1,45 +1,41 @@
-import { Heart } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Heart } from "lucide-react";
 
 // Servido a partir de client/public/banners (caminho estável, não um import de
 // asset do Vite) para que o script de prerender (scripts/prerender.ts), que
 // roda fora do bundler, consiga renderizar este componente sem depender da
 // resolução de assets do Vite.
-const bannerCicatricure = '/banners/bannercicatricure.webp';
+const bannerCicatricure = "/banners/bannercicatricure.webp";
 
 export default function BannerCicatricure() {
   return (
-    <Card className="bg-gradient-to-r from-pink-50 to-rose-50 border-2 border-pink-100 shadow-sm hover:shadow-md transition-shadow duration-300 my-8">
-      <CardContent className="p-4 sm:p-6">
-        <div className="text-center">
-          <div className="flex items-center justify-center space-x-2 mb-3">
-            <Heart className="text-pink-400" size={20} />
-            <h3 className="text-lg font-semibold text-pink-800">
-              Cuidado com a sua pele
-            </h3>
-            <Heart className="text-pink-400" size={20} />
-          </div>
-          
-          <div className="bg-white/60 rounded-xl p-3 border border-pink-100 hover:border-pink-300 transition-colors duration-300">
-            <a 
-              href="https://tidd.ly/4bJadMo" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="block hover:opacity-90 transition-opacity duration-300"
-            >
-              <img
-                src={bannerCicatricure}
-                alt="Cicatricure Maternity - Prevenção de Estrias"
-                width={900}
-                height={1613}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-auto max-w-3xl mx-auto rounded-lg shadow-sm"
-              />
-            </a>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
+    <aside
+      aria-label="Indicação de produto"
+      className="rounded-[2rem] border-2 border-blush-100 bg-gradient-to-br from-blush-50 to-peach-50 p-4 shadow-sm sm:p-6"
+    >
+      <div className="mb-3 flex items-center justify-center gap-2">
+        <Heart className="fill-blush-200 text-blush-300" size={18} />
+        <p className="font-heading text-lg font-semibold text-plum">Cuidado com a sua pele</p>
+        <Heart className="fill-blush-200 text-blush-300" size={18} />
+      </div>
+      <div className="rounded-3xl border border-blush-100 bg-white/70 p-3 transition-colors duration-300 hover:border-blush-300">
+        <a
+          href="https://tidd.ly/4bJadMo"
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          className="block transition-opacity duration-300 hover:opacity-90"
+        >
+          <img
+            src={bannerCicatricure}
+            alt="Cicatricure Maternity - Prevenção de Estrias"
+            width={900}
+            height={1613}
+            loading="lazy"
+            decoding="async"
+            className="mx-auto h-auto w-full max-w-3xl rounded-2xl"
+          />
+        </a>
+      </div>
+      <p className="mt-2 text-center text-[11px] text-cocoa/55">Link de afiliado</p>
+    </aside>
   );
 }

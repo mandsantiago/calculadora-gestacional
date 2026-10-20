@@ -3,6 +3,66 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ===== Paleta e tipografia do novo layout (delicado / orgânico) ===== */
+@theme {
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: "Fredoka", "Quicksand", ui-sans-serif, system-ui, sans-serif;
+
+  --color-cream: #fffaf5;
+  --color-cocoa: #4f4250;
+  --color-plum: #3f3352;
+
+  --color-blush-50: #fff5f6;
+  --color-blush-100: #fde8eb;
+  --color-blush-200: #f9d0d7;
+  --color-blush-300: #f2aebb;
+  --color-blush-400: #e78c9f;
+  --color-blush-500: #d66d84;
+  --color-blush-600: #b4506a;
+
+  --color-peach-50: #fff7f1;
+  --color-peach-100: #ffebde;
+  --color-peach-200: #fdd5be;
+  --color-peach-300: #f8bb9b;
+  --color-peach-400: #f09f7c;
+  --color-peach-500: #e2825f;
+  --color-peach-600: #b75e3d;
+
+  --color-sage-50: #f3f9f5;
+  --color-sage-100: #e2f1e8;
+  --color-sage-200: #c6e3d1;
+  --color-sage-300: #a0cfb3;
+  --color-sage-400: #78b493;
+  --color-sage-500: #579877;
+  --color-sage-600: #3c7658;
+
+  --color-butter-50: #fffbec;
+  --color-butter-100: #fff3cf;
+  --color-butter-200: #fde7a4;
+  --color-butter-400: #f0c55e;
+  --color-butter-600: #93690c;
+
+  --color-lilac-50: #f9f6fd;
+  --color-lilac-100: #efe8fa;
+  --color-lilac-200: #ddd0f3;
+  --color-lilac-400: #a98fdb;
+  --color-lilac-600: #7458b0;
+
+  --animate-float: float-gentle 6s ease-in-out infinite;
+  --animate-float-slow: float-gentle 9s ease-in-out 1.5s infinite;
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float, .animate-float-slow { animation: none; }
+  html { scroll-behavior: auto !important; }
+}
+
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -117,11 +177,21 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground font-sans;
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
   }
-  h1, h2, h3, h4, h5, h6, .font-serif {
-    font-family: 'Playfair Display', serif;
+  body {
+    @apply bg-cream text-cocoa font-sans antialiased;
+    font-weight: 500;
+  }
+  h1, h2, h3, h4, h5, h6, .font-serif, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.005em;
+  }
+  ::selection {
+    background: var(--color-blush-200);
+    color: var(--color-plum);
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -177,4 +247,32 @@
       max-width: 1280px; /* Standard content width */
     }
   }
+}
+
+@layer components {
+  /* Borda “bordadinho” recortada (scallop) — inspirada no layout de referência */
+  .scallop-bottom {
+    position: relative;
+  }
+  .scallop-bottom::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -13px;
+    height: 14px;
+    background-image: radial-gradient(circle at 10px 0, var(--scallop-color, #fde8eb) 11px, transparent 12px);
+    background-size: 20px 14px;
+    background-repeat: repeat-x;
+    pointer-events: none;
+  }
+
+  /* Ponto pontilhado delicado usado como textura de fundo */
+  .dots-soft {
+    background-image: radial-gradient(rgba(214, 109, 132, 0.12) 1.2px, transparent 1.4px);
+    background-size: 22px 22px;
+  }
+
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
 }

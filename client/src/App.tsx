@@ -1,4 +1,4 @@
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -15,15 +15,20 @@ import TermosDeUso from "./pages/TermosDeUso";
 import NotFound from "./pages/NotFound";
 
 function App() {
+  const [location] = useLocation();
+  // A home tem um "hero" que encosta no topo; as páginas internas mantêm o
+  // respiro que já tinham.
+  const isHome = location === "/";
+
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50 font-sans text-gray-800 selection:bg-pink-200 selection:text-pink-900">
+          <div className="min-h-screen bg-cream font-sans text-cocoa selection:bg-blush-200 selection:text-plum">
             <Header />
 
-            <main className="pt-10 pb-16">
+            <main className={isHome ? "" : "pt-10 pb-16"}>
               <Switch>
                 <Route path="/" component={Home} />
                 <Route path="/semana/:numero" component={PaginaSemana} />
